@@ -1,5 +1,12 @@
 package com.nhnacademy.hello.filter;
-public class MyPageFilter implements Filter {
+
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import java.io.IOException;
+
+public class MyPageFilter implements Filter2 {
 
     @Override
     public void doFilter(Request request,FilterChain filterChain) {
@@ -18,4 +25,5 @@ public class MyPageFilter implements Filter {
             filterChain.doFilter(request);
         }
     }
+
 }

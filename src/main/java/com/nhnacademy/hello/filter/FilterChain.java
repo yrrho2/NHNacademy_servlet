@@ -1,13 +1,15 @@
 package com.nhnacademy.hello.filter;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 public class FilterChain {
-    private List<Filter> filters = new LinkedList<>();
+    private List<Filter2> filters = new LinkedList<>();
     private Iterator iterator;
 
-    public void addFilter(Filter filter){
+    public void addFilter(Filter2 filter){
         this.filters.add(filter);
         iterator = filters.iterator();
     }
@@ -15,7 +17,7 @@ public class FilterChain {
     public void doFilter(Request request){
 
         if(iterator.hasNext()){
-            Filter nextFilter = (Filter) iterator.next();
+            Filter2 nextFilter = (Filter2) iterator.next();
             nextFilter.doFilter(request,this);
         }else{
 
@@ -33,4 +35,6 @@ public class FilterChain {
         }
     }
 
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse) {
+    }
 }
