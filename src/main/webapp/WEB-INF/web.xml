@@ -17,6 +17,11 @@
     </error-page>
 
 
+    <context-param>
+        <param-name>counterFileName</param-name>
+        <param-value>counter.dat</param-value>
+    </context-param>
+
 
     <context-param>
         <param-name>url</param-name>
@@ -81,11 +86,6 @@
         <servlet-class>com.nhnacademy.hello.login.LogoutServlet</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>characterEncodingFilter</servlet-name>
-        <servlet-class>com.nhnacademy.hello.filter.CharacterEncodingFilter</servlet-class>
-    </servlet>
-
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>com.nhnacademy.hello.filter.CharacterEncodingFilter</filter-class>
@@ -106,6 +106,12 @@
             </param-value>
         </init-param>
     </filter>
+
+    <filter>
+        <filter-name>counterFilter</filter-name>
+        <filter-class>com.nhnacademy.hello.filter.CounterFilter</filter-class>
+    </filter>
+
     <servlet-mapping>
         <servlet-name>logoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -144,7 +150,10 @@
         <servlet-name>RequestServlet</servlet-name>
         <url-pattern>/req</url-pattern>
     </servlet-mapping>
-
+    <filter-mapping>
+        <filter-name>counterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>loginCheckFilter</filter-name>
         <url-pattern>/*</url-pattern>
