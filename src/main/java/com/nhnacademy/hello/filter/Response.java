@@ -1,4 +1,4 @@
-package com.nhnacademy.hello.filter01;
+package com.nhnacademy.hello.filter;
 public interface Response {
     void doResponse(Request request);
 }

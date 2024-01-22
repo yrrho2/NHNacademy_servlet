@@ -1,7 +1,4 @@
-package com.nhnacademy.hello.filter01;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+package com.nhnacademy.hello.filter;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;

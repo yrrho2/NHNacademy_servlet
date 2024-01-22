@@ -1,4 +1,4 @@
-package com.nhnacademy.hello.filter01;
+package com.nhnacademy.hello.filter;
 
 import lombok.Getter;
 

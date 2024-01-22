@@ -1,5 +1,6 @@
-package com.nhnacademy.hello.filter01;
-import java.util.Objects;public class AdminPageResponse implements Response  {
+package com.nhnacademy.hello.filter;
+
+public class AdminPageResponse implements Response  {
     @Override
     public void doResponse(Request request) {
         System.out.println("###### response:AdminPageResponse #####");
