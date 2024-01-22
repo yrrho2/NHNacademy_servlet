@@ -10,10 +10,10 @@ class NhnMartShell {
         Customer jordan = new Customer(buyList);
         // 장바구니를 챙긴다.
         jordan.bring(mart.provideBasket());
-        // 식품을 담는다.
-        jordan.pickFoods(mart.getFoodStand());
-        // 카운터에서 계산한다.
-        jordan.payTox(mart.getCounter());
+//        // 식품을 담는다.
+//        jordan.pickFoods(mart.getFoodStand());
+//        // 카운터에서 계산한다.
+//        jordan.payTox(mart.getCounter());
     }
 
     private static BuyList inputBuyListFromShell() {
