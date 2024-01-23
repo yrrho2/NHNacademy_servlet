@@ -6,6 +6,8 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,6 +18,14 @@ import java.util.Objects;
 import java.util.Set;
 import javax.servlet.Filter;
 
+
+@WebFilter(filterName = "loginCheckFilter", urlPatterns = "/*",
+initParams = {
+        @WebInitParam(name="exclude-urls", value =
+                "/login\n" +
+                "/logout\n" +
+                "/login.html")
+})
 @Slf4j
 public class LoginCheckFilter implements Filter {
     private final Set<String> excludeUrls = new HashSet<>();

@@ -4,7 +4,14 @@ import javax.servlet.*;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 
+@WebFilter(filterName = "characterEncodingFilter", urlPatterns = "/*",
+    initParams = {
+        @WebInitParam(name="encoding", value="UTF-8")
+    }
+)
 public class CharacterEncodingFilter implements Filter {
     private String encoding;
 
